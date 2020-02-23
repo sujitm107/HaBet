@@ -19,14 +19,44 @@
                                 <rect key="frame" x="0.0" y="165" width="414" height="687"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="betCell" id="jLt-us-ULd">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="betCell" rowHeight="100" id="jLt-us-ULd" customClass="BetTableViewCell" customModule="HaBet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jLt-us-ULd" id="2AE-eo-iQq">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulj-iU-nOB">
+                                                    <rect key="frame" x="30" y="21" width="72" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXO-td-HO4">
+                                                    <rect key="frame" x="30" y="70" width="85.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2d" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdF-lX-qgi">
+                                                    <rect key="frame" x="359" y="41" width="20" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EXO-td-HO4" firstAttribute="leading" secondItem="2AE-eo-iQq" secondAttribute="leadingMargin" constant="10" id="Hqz-JO-oUm"/>
+                                                <constraint firstItem="Ulj-iU-nOB" firstAttribute="top" secondItem="2AE-eo-iQq" secondAttribute="topMargin" constant="10" id="J0X-F8-s98"/>
+                                                <constraint firstItem="Ulj-iU-nOB" firstAttribute="leading" secondItem="2AE-eo-iQq" secondAttribute="leadingMargin" constant="10" id="bIB-eS-iEV"/>
+                                                <constraint firstItem="EXO-td-HO4" firstAttribute="top" secondItem="Ulj-iU-nOB" secondAttribute="bottom" constant="15" id="cS4-Rn-e00"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kdF-lX-qgi" secondAttribute="trailing" constant="15" id="jUV-Jl-xYB"/>
+                                                <constraint firstItem="kdF-lX-qgi" firstAttribute="top" secondItem="2AE-eo-iQq" secondAttribute="topMargin" constant="30" id="yre-Fc-ZFY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="challengeLabel" destination="EXO-td-HO4" id="eJH-bV-lN9"/>
+                                            <outlet property="nameLabel" destination="Ulj-iU-nOB" id="V9c-JX-uP7"/>
                                             <segue destination="Wso-ZC-XuC" kind="show" identifier="betDetailSegue" id="xfY-kc-s1c"/>
                                         </connections>
                                     </tableViewCell>
@@ -172,12 +202,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5V-1E-bnN">
-                                <rect key="frame" x="183" y="572" width="48" height="42"/>
+                                <rect key="frame" x="186.5" y="572" width="41" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="6QQ-8i-ag7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="33"/>
-                                <state key="normal" title="Yes"/>
+                                <state key="normal" title="No"/>
+                                <connections>
+                                    <action selector="YesButtonClicked:" destination="Wso-ZC-XuC" eventType="touchUpInside" id="lOV-Wx-gMx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're Amazing!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2E-gg-ZLI">
                                 <rect key="frame" x="94" y="757" width="240" height="56"/>
@@ -197,7 +230,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" backgroundImage="cameraIcon"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xqq-5L-NWE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="running" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xqq-5L-NWE">
                                 <rect key="frame" x="34" y="245" width="346" height="293"/>
                             </imageView>
                         </subviews>
@@ -255,5 +288,6 @@
     </scenes>
     <resources>
         <image name="cameraIcon" width="512" height="512"/>
+        <image name="running" width="480" height="479"/>
     </resources>
 </document>

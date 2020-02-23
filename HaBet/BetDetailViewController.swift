@@ -27,7 +27,20 @@ class BetDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         BetValueLabel.text = "Bet: \(bet.amount)"
         
+        if(bet.activity == "Reading"){
+            PhotoImageView.image = UIImage(named: "books.")
+        } else {
+            PhotoImageView.image = UIImage(named: "running.jpg")
+        }
+        
     }
+    
+    @IBAction func YesButtonClicked(_ sender: Any) {
+        
+        YesButton.setTitle("Yes", for: .normal)
+        
+    }
+    
     
 
     /*

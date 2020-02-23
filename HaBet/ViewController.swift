@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var betsTableview: UITableView!
     
+    @IBOutlet weak var challengeLabel: UILabel!
+    @IBOutlet weak var opponentNameLabel: UILabel!
     var bets: [Bet] = []
     
     override func viewDidLoad() {
@@ -19,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         betsTableview.delegate = self
         betsTableview.dataSource = self
         
-        var temp: Bet = Bet(opponent: "Rachana", amount: "$50", activity: "running", endDate: "4-2-2020")
+        var temp: Bet = Bet(opponent: "Rachana", amount: "$50", activity: "Running", endDate: "4-2-2020")
         bets.append(temp)
         temp = Bet(opponent: "Sujit", amount: "$50", activity: "Reading", endDate: "6-25-2020")
         bets.append(temp)
@@ -52,11 +54,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = betsTableview.dequeueReusableCell(withIdentifier: "betCell", for: indexPath) as UITableViewCell
+        let cell = betsTableview.dequeueReusableCell(withIdentifier: "betCell", for: indexPath) as! BetTableViewCell
         
-        cell.textLabel?.text = bets[indexPath.row].toString()
+        //cell.textLabel?.text = bets[indexPath.row].toString()
+        
+        cell.nameLabel.text = bets[indexPath.row].opponent
+        cell.challengeLabel.text = "Challenge: \(bets[indexPath.row].activity)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 
@@ -70,7 +79,6 @@ extension ViewController: BetDelegate{
         bets.append(temp)
         print(bets.count)
         self.betsTableview.reloadData()
-        
         
     }
 }

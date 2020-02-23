@@ -12,16 +12,19 @@ class Bet{
     var amount: String
     var activity: String
     var endDate: String
+    var startDate: String
     
     init(opponent: String, amount: String, activity: String, endDate: String) {
         self.opponent = opponent
         self.amount = amount
         self.activity = activity
         self.endDate = endDate
+        self.startDate = Date.init().description
     }
     
     func toString() -> String {
-        return "\(amount) \(activity) bet with \(opponent)"
+        print(startDate)
+        return "\(activity) bet with \(opponent) from \(startDate)"
     }
     
 }
