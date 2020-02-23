@@ -15,7 +15,8 @@
 		8109CF3E24020B9200BE6447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8109CF3D24020B9200BE6447 /* Assets.xcassets */; };
 		8109CF4124020B9200BE6447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109CF3F24020B9200BE6447 /* LaunchScreen.storyboard */; };
 		8109CF492402178A00BE6447 /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109CF482402178A00BE6447 /* Bet.swift */; };
-		816C9C2E2402298B0073E4F0 /* BetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C9C2D2402298B0073E4F0 /* BetController.swift */; };
+		816C9C2E2402298B0073E4F0 /* CreateBetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C9C2D2402298B0073E4F0 /* CreateBetController.swift */; };
+		816FB6A724026818007F88A5 /* BetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816FB6A624026818007F88A5 /* BetDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		8109CF4024020B9200BE6447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8109CF4224020B9200BE6447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8109CF482402178A00BE6447 /* Bet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
-		816C9C2D2402298B0073E4F0 /* BetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetController.swift; sourceTree = "<group>"; };
+		816C9C2D2402298B0073E4F0 /* CreateBetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBetController.swift; sourceTree = "<group>"; };
+		816FB6A624026818007F88A5 /* BetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +67,12 @@
 				8109CF3124020B8F00BE6447 /* AppDelegate.swift */,
 				8109CF3324020B8F00BE6447 /* SceneDelegate.swift */,
 				8109CF3524020B8F00BE6447 /* ViewController.swift */,
-				816C9C2D2402298B0073E4F0 /* BetController.swift */,
-				8109CF482402178A00BE6447 /* Bet.swift */,
+				816C9C2D2402298B0073E4F0 /* CreateBetController.swift */,
+				816FB6A624026818007F88A5 /* BetDetailViewController.swift */,
 				8109CF3724020B8F00BE6447 /* Main.storyboard */,
 				8109CF3D24020B9200BE6447 /* Assets.xcassets */,
 				8109CF3F24020B9200BE6447 /* LaunchScreen.storyboard */,
+				8109CF482402178A00BE6447 /* Bet.swift */,
 				8109CF4224020B9200BE6447 /* Info.plist */,
 				8109CF3A24020B8F00BE6447 /* HaBet.xcdatamodeld */,
 			);
@@ -148,11 +151,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8109CF492402178A00BE6447 /* Bet.swift in Sources */,
+				816FB6A724026818007F88A5 /* BetDetailViewController.swift in Sources */,
 				8109CF3624020B8F00BE6447 /* ViewController.swift in Sources */,
 				8109CF3224020B8F00BE6447 /* AppDelegate.swift in Sources */,
 				8109CF3C24020B8F00BE6447 /* HaBet.xcdatamodeld in Sources */,
 				8109CF3424020B8F00BE6447 /* SceneDelegate.swift in Sources */,
-				816C9C2E2402298B0073E4F0 /* BetController.swift in Sources */,
+				816C9C2E2402298B0073E4F0 /* CreateBetController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@ protocol BetDelegate{
     func createBet(activityText: String, opponentText: String, endDateText: String, amountText: String)
 }
 
-class BetController: UIViewController {
+class CreateBetController: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var activityTextField: UITextField!
     @IBOutlet weak var opponentTextField: UITextField!

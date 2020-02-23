@@ -26,6 +26,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Wso-ZC-XuC" kind="show" identifier="betDetailSegue" id="xfY-kc-s1c"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -34,7 +37,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <segue destination="DMS-0f-3Vi" kind="show" id="7K6-K3-GBg"/>
+                                    <segue destination="DMS-0f-3Vi" kind="show" identifier="showBetController" id="7K6-K3-GBg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Bets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mV9-Ve-twD">
@@ -66,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="133.92857142857142"/>
         </scene>
-        <!--Bet Controller-->
+        <!--Create Bet Controller-->
         <scene sceneID="TFv-IY-V1W">
             <objects>
-                <viewController id="DMS-0f-3Vi" customClass="BetController" customModule="HaBet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DMS-0f-3Vi" customClass="CreateBetController" customModule="HaBet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CdR-sW-gvr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +143,96 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7rN-FJ-LC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801.449275362319" y="138.61607142857142"/>
+            <point key="canvasLocation" x="2399" y="-447"/>
+        </scene>
+        <!--Bet Detail View Controller-->
+        <scene sceneID="pX8-Yl-V2c">
+            <objects>
+                <viewController id="Wso-ZC-XuC" customClass="BetDetailViewController" customModule="HaBet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T5m-oB-wmN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bet: $42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KP-9m-90o">
+                                <rect key="frame" x="20" y="128" width="112.5" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Lgn-lf-JjR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Streak: 7 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y2-7h-ouG">
+                                <rect key="frame" x="122.5" y="174" width="169" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="mte-cP-hdC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5V-1E-bnN">
+                                <rect key="frame" x="183" y="572" width="48" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="6QQ-8i-ag7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="33"/>
+                                <state key="normal" title="Yes"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're Amazing!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2E-gg-ZLI">
+                                <rect key="frame" x="94" y="757" width="240" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="LEN-y7-df9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="35"/>
+                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uop-60-bcK">
+                                <rect key="frame" x="155.5" y="639" width="103" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="93r-dj-RKY"/>
+                                    <constraint firstAttribute="height" constant="101" id="DgS-SR-Z5M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" backgroundImage="cameraIcon"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xqq-5L-NWE">
+                                <rect key="frame" x="34" y="245" width="346" height="293"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="p2E-gg-ZLI" firstAttribute="leading" secondItem="YXk-RZ-tuB" secondAttribute="leading" constant="94" id="125-Jp-2EY"/>
+                            <constraint firstItem="2KP-9m-90o" firstAttribute="top" secondItem="YXk-RZ-tuB" secondAttribute="top" constant="40" id="Af6-pb-KxC"/>
+                            <constraint firstItem="xqq-5L-NWE" firstAttribute="leading" secondItem="YXk-RZ-tuB" secondAttribute="leading" constant="34" id="J7p-RQ-wzE"/>
+                            <constraint firstItem="xqq-5L-NWE" firstAttribute="centerX" secondItem="T5m-oB-wmN" secondAttribute="centerX" id="Lv2-Ad-B01"/>
+                            <constraint firstItem="2KP-9m-90o" firstAttribute="leading" secondItem="YXk-RZ-tuB" secondAttribute="leading" constant="20" id="OPE-7N-Vdq"/>
+                            <constraint firstItem="I5V-1E-bnN" firstAttribute="centerX" secondItem="T5m-oB-wmN" secondAttribute="centerX" id="Ouy-42-AwC"/>
+                            <constraint firstItem="5Y2-7h-ouG" firstAttribute="centerX" secondItem="T5m-oB-wmN" secondAttribute="centerX" id="W7w-Te-r9g"/>
+                            <constraint firstItem="p2E-gg-ZLI" firstAttribute="top" secondItem="Uop-60-bcK" secondAttribute="bottom" constant="17" id="dQS-E3-tyz"/>
+                            <constraint firstItem="YXk-RZ-tuB" firstAttribute="bottom" secondItem="p2E-gg-ZLI" secondAttribute="bottom" constant="49" id="eP0-vd-pvE"/>
+                            <constraint firstItem="5Y2-7h-ouG" firstAttribute="top" secondItem="2KP-9m-90o" secondAttribute="bottom" constant="10" id="fct-Ev-Ad0"/>
+                            <constraint firstItem="xqq-5L-NWE" firstAttribute="top" secondItem="5Y2-7h-ouG" secondAttribute="bottom" constant="23" id="h3v-z9-J6Z"/>
+                            <constraint firstItem="Uop-60-bcK" firstAttribute="centerX" secondItem="T5m-oB-wmN" secondAttribute="centerX" id="hSh-Y4-pPs"/>
+                            <constraint firstItem="I5V-1E-bnN" firstAttribute="top" secondItem="xqq-5L-NWE" secondAttribute="bottom" constant="34" id="mAq-9Y-3MW"/>
+                            <constraint firstItem="Uop-60-bcK" firstAttribute="top" secondItem="I5V-1E-bnN" secondAttribute="bottom" constant="25" id="p7s-az-HEJ"/>
+                            <constraint firstItem="YXk-RZ-tuB" firstAttribute="trailing" secondItem="p2E-gg-ZLI" secondAttribute="trailing" constant="80" id="pDL-Hn-Poa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YXk-RZ-tuB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FU0-H8-IFC"/>
+                    <connections>
+                        <outlet property="BetValueLabel" destination="2KP-9m-90o" id="1WV-GQ-DA0"/>
+                        <outlet property="CameraButton" destination="Uop-60-bcK" id="v0L-fc-Yt4"/>
+                        <outlet property="PhotoImageView" destination="xqq-5L-NWE" id="gLd-mv-Jp1"/>
+                        <outlet property="StreakLabel" destination="5Y2-7h-ouG" id="uQ0-UC-lZw"/>
+                        <outlet property="YesButton" destination="I5V-1E-bnN" id="0CN-qH-5nx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UbA-fX-ySh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2398.5507246376815" y="253.79464285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EOo-hQ-lQX">
@@ -161,4 +253,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cameraIcon" width="512" height="512"/>
+    </resources>
 </document>

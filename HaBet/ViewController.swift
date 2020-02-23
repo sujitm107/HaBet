@@ -25,16 +25,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         bets.append(temp)
         
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showEditViewController" {
-//            guard let editVC = segue.destination as? EditViewController else {
-//                return
-//            }
-//            
-//            editVC.betDelegate = self
-//        }
-//    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showBetController" {
+            guard let betVC = segue.destination as? CreateBetController else {
+                return
+            }
+            
+            betVC.betDelegate = self
+        }
+        
+        if segue.identifier == "betDetailSegue" {
+            guard let betDetailVC = segue.destination as? BetDetailViewController else {
+                return
+            }
+            
+            betDetailVC.bet = bets[betsTableview.indexPathForSelectedRow!.row]
+            
+            
+        }
+    }
     
 //SETTING UP TABLEVIEW
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
